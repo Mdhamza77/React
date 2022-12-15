@@ -132,3 +132,22 @@ React DOM efficiently updates the DOM to match <h1>Hello, Sara</h1>.
       }
     const x = (<h1>{sum(22,33)}</h1>)
      root.render(x)
+
+=====================================================================================================================================================
+
+4 State and Its Life cycle 
+
+
+//    Class Components  
+
+Class clock extends Components {
+    render(){
+        return {
+            <div> 
+            
+            
+            
+             </div>
+        }
+    }
+}
