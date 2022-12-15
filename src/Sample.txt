@@ -1,0 +1,73 @@
+// Defining a basic JSx .   
+
+const roo = ReactDOM.createRoot(document.getElementById('roo'));
+const name = "Welcome to Jsx"
+roo.render(<h1>This is used inside an root elements {name}</h1>)
+
+ <div id="roo"></div>
+    
+
+//   This is a Name fomat Expression function Using ReactDOM - Jsx  
+function formatName(user) {
+    return user.firstName + ' ' + user.lastName;
+  }
+  
+  const user = {
+    firstName: 'Harper',
+    lastName: 'Perez'
+  };
+  
+  const element = (
+    <h1>
+      Hello, {formatName(user)}!
+    </h1>
+  );
+// Jsx As an Expression
+function getGreeting(user) {
+    if (user) {
+      return <h1>Hello, {formatName(user)}</h1>;
+    }
+    return <h1>Hello, Stranger.</h1>;
+  }
+
+  const fun = ReactDOM.createRoot(document.getElementById('r'))
+  fun.render(<h3>This is to call function formatName {element}</h3>)
+
+ 
+  <div id="r"></div>
+
+
+  //   Child element
+
+  const elem  =  (
+    <div> 
+         <h1>Hello</h1>
+         <h2>This consist of Child elements</h2>
+     </div>
+)
+
+
+
+===========================================================================================================================
+
+2 .  Rendering an elements   
+
+  2.1   Example of Rendering   
+
+        const dom = ReactDOM.createRoot(document.getElementById('root'))
+        const x = ( <h6>This is to show How Rendering </h6>)
+         dom.render(<p>{x}</p>)   
+
+   2.2  Updating Rendering element
+
+   function tick() {
+    const elements = (
+        <div>
+            <h3>React DOM compares the element and its children to the previous one, and only applies the DOM updates necessary to bring the DOM to the desired state.</h3>
+            <h1>It's {new Date().toLocaleTimeString()} local time date </h1>
+        </div>
+    )
+    root.render(elements)
+}
+setInterval(tick,100)      
+       

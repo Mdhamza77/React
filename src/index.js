@@ -3,12 +3,23 @@ import ReactDOM from 'react-dom/client';
 import './index.css';
 import App from './App';
 import reportWebVitals from './reportWebVitals';
-
 const root = ReactDOM.createRoot(document.getElementById('root'));
 root.render(<App/>)
-const roo = ReactDOM.createRoot(document.getElementById('roo'));
-const name = "Welcome to Jsx"
-roo.render(<h2>This is used inside an root elements {name}</h2>)
+
+function Welcome(props) {
+    return <h1>Hello, {props.name}</h1>;
+  }
+  
+  function Ap() {
+    return (
+      <div>
+        <Welcome name="Sara" />
+        <Welcome name="Cahal" />
+        <Welcome name="Edite" />
+      </div>
+    );
+  }
+  root.render(<h2>{Ap()}</h2>)
 
 
 console.log("Define React ?")
