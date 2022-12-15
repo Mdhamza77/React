@@ -71,3 +71,64 @@ function getGreeting(user) {
 }
 setInterval(tick,100)      
        
+
+=============================================================================================================================================================================================================================================
+
+3. Components and Props  
+
+
+    3.1 function  Example   Using element as Properties
+
+        function Welcome(props) {
+             return <h1>Hello, {props.name}</h1>;
+        }
+  
+        const comp = {name : "jamal" }
+        const ele = (<h1>{Welcome(comp)}</h1>)       
+        root.render(ele)
+
+
+      3.2 elements can also be Defined USer Defined  Components  
+
+      function Welcome(props) {
+    return <h1>Hello, {props.name}</h1>;
+      }
+  
+  const comp = <Welcome name="Alia"/>
+  root.render(comp)
+
+    Steps  :   
+
+    Let’s recap what happens in this example:
+
+We call root.render() with the <Welcome name="Sara" /> element.
+React calls the Welcome component with {name: 'Sara'} as the props.
+Our Welcome component returns a <h1>Hello, Sara</h1> element as the result.
+React DOM efficiently updates the DOM to match <h1>Hello, Sara</h1>.
+
+   3.3   Composing Components 
+
+   function Welcome(props) {
+    return <h1>Hello, {props.name}</h1>;
+  }
+  
+  function Ap() {
+    return (
+      <div>
+        <Welcome name="Sara" />
+        <Welcome name="Cahal" />
+        <Welcome name="Edite" />
+      </div>
+    );
+  }
+
+  root.render(<h2>{Ap()}</h2>)
+
+  3.3  Pure Function  
+
+
+    function sum(a,b){
+    return a+b
+      }
+    const x = (<h1>{sum(22,33)}</h1>)
+     root.render(x)
