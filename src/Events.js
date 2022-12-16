@@ -23,3 +23,26 @@ class Events extends Component {
 }
 
 export default Events;
+
+
+
+//  Conditonal Handler  
+
+
+function User(props){
+            return <h1>Welcome to Home page</h1>
+}
+function Guest(props){
+     return <h1>Welcome guest , please signup</h1>
+}
+
+
+function Greeting(props){
+     const isLogged = props.isLogged
+     if(isLogged){
+        return <User/>
+     }
+     else {
+        return <Guest/>
+     }
+}
