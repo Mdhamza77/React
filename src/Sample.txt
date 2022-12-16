@@ -191,3 +191,93 @@ We also want to clear that timer whenever the DOM produced by the Clock is remov
 // Declaering using Methods for Mounting and Unmounting.
 
 
+=============================================================================================================================================================
+
+
+conditionals    
+
+
+
+class Opr extends React.Component{
+    constructor(props){
+        super(props)
+        this.handleIn = this.handleIn.bind(this);
+        this.handleOut = this.handleOut.bind(this);
+        this.state = {isLogged : false}
+    }
+
+     handleIn(){
+        this.setState({isLogged : true})
+     }
+     handleOut(){
+        this,this.setState({isLogged : false})
+     }
+
+     render() {
+        const isLogged = this.state.isLogged ; 
+        let button ; 
+        if(isLogged){
+            button = <Logout onClick={this.handleIn}/>
+
+        }
+        else {
+            button = <Login onClick = {this.handleOut}/>
+        }
+     
+     return () {
+        <div>
+            {button}
+        </div>
+     }
+}
+}
+
+function Login(props){
+    return (
+        <button onClick={props.onClick}> Login</button>
+    )
+}
+
+function Logout(props){
+    return (
+        <button onClick={props.onClick}></button>
+    )
+}
+
+
+// Preventing Component Rendering 
+
+
+function Warn(props){
+  if(!props.Warn){
+    return null ;
+  }
+  return (
+    <div> 
+          Warning 
+    </div>
+  )
+}
+
+class prevent extends React.Component {
+  constructor(props) {
+    super(props); 
+    this.state {show : true}
+    this.Toggle = this.Toggle.bind.(this);
+  }
+   Toggle(){
+    this.setState(state =>({
+          show : !state.show 
+    }))
+   }
+   render()  {
+    return  {
+      <div> 
+          <Warn warn= {this.state.show} /> 
+          <button onClick = {this.Toggle}>{this.state.show ? 'Hide' : 'Show'}
+          </button>    
+      
+      </div>
+    }
+   }
+}
