@@ -147,7 +147,47 @@ Class clock extends Components {
             
             
             
-             </div>
+            </div>
         }
     }
 }
+
+
+
+class Clock extends React.Component{
+    constructor(props){
+        super(props);
+        this.state = {date : new Date()};
+    }
+    render(){
+        return(
+            <div> 
+               <App/>
+               <h3>{this.state.date.toLocaleTimeString()}</h3>
+               <h4>it is {this.state.date.getDate()}-{this.state.date.getMonth()}-{this.state.date.getFullYear()}</h4> 
+            </div>
+        )
+    }
+}
+function inter(){
+    root.render(<Clock/>)
+}
+
+setInterval(inter,100)
+
+
+
+
+ 4.1  Life Cycle Methods  
+ 
+Mounting :  
+
+We want to set up a timer whenever the Clock is rendered to the DOM for the first time. This is called “mounting” in React.
+
+Un Mounting :
+
+We also want to clear that timer whenever the DOM produced by the Clock is removed. This is called “unmounting” in React.
+
+// Declaering using Methods for Mounting and Unmounting.
+
+

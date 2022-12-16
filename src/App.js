@@ -1,7 +1,7 @@
 import React from 'react';
 import './App.css';
 import Props from './Props';
-
+import Class from './Class';
 function App() {
   
   return (
@@ -13,13 +13,16 @@ function App() {
          name = "Muhammed" 
          age = "22"
          />
-   
-
+         
+          <Class/>
+          
+          
   </div>
-     
+  
     </div>
   );
 }
 
 
-export default App;
+export default App;  
+

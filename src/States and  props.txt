@@ -1,0 +1,372 @@
+What does setState do?
+setState() schedules an update to a component’s state object. When state changes, the component responds by re-rendering.
+
+What is the difference between state and props?
+props (short for “properties”) and state are both plain JavaScript objects. While both hold information that influences the output of render, they are different in one important way: props get passed to the component (similar to function parameters) whereas state is managed within the component (similar to variables declared within a function).
+
+Here are some good resources for further reading on when to use props vs state:
+
+Props vs State
+ReactJS: Props vs. State
+Why is setState giving me the wrong value?
+In React, both this.props and this.state represent the rendered values, i.e. what’s currently on the screen.
+
+Calls to setState are asynchronous - don’t rely on this.state to reflect the new value immediately after calling setState. Pass an updater function instead of an object if you need to compute values based on the current state (see below for details).
+
+Example of code that will not behave as expected:
+
+incrementCount() {
+  // Note: this will *not* work as intended.
+  this.setState({count: this.state.count + 1});
+}
+
+handleSomething() {
+  // Let's say `this.state.count` starts at 0.
+  this.incrementCount();
+  this.incrementCount();
+  this.incrementCount();
+  // When React re-renders the component, `this.state.count` will be 1, but you expected 3.
+
+  // This is because `incrementCount()` function above reads from `this.state.count`,
+  // but React doesn't update `this.state.count` until the component is re-rendered.
+  // So `incrementCount()` ends up reading `this.state.count` as 0 every time, and sets it to 1.
+
+  // The fix is described below!
+}
+See below for how to fix this problem.
+
+How do I update state with values that depend on the current state?
+Pass a function instead of an object to setState to ensure the call always uses the most updated version of state (see below).
+
+What is the difference between passing an object or a function in setState?
+Passing an update function allows you to access the current state value inside the updater. Since setState calls are batched, this lets you chain updates and ensure they build on top of each other instead of conflicting:
+
+incrementCount() {
+  this.setState((state) => {
+    // Important: read `state` instead of `this.state` when updating.
+    return {count: state.count + 1}
+  });
+}
+
+handleSomething() {
+  // Let's say `this.state.count` starts at 0.
+  this.incrementCount();
+  this.incrementCount();
+  this.incrementCount();
+
+  // If you read `this.state.count` now, it would still be 0.
+  // But when React re-renders the component, it will be 3.
+}
+Learn more about setState
+
+When is setState asynchronous?
+Currently, setState is asynchronous inside event handlers.
+
+This ensures, for example, that if both Parent and Child call setState during a click event, Child isn’t re-rendered twice. Instead, React “flushes” the state updates at the end of the browser event. This results in significant performance improvements in larger apps.
+
+This is an implementation detail so avoid relying on it directly. In the future versions, React will batch updates by default in more cases.
+
+Why doesn’t React update this.state synchronously?
+As explained in the previous section, React intentionally “waits” until all components call setState() in their event handlers before starting to re-render. This boosts performance by avoiding unnecessary re-renders.
+
+However, you might still be wondering why React doesn’t just update this.state immediately without re-rendering.
+
+There are two main reasons:
+
+This would break the consistency between props and state, causing issues that are very hard to debug.
+This would make some of the new features we’re working on impossible to implement.
+This GitHub comment dives deep into the specific examples.
+
+Should I use a state management library like Redux or MobX?
+Maybe.
+
+It’s a good idea to get to know React first, before adding in additional libraries. You can build quite complex applications using only React.
+
+Is this page useful?Edit this page
+
+
+
+Props
+What does “props” even mean?
+
+To get the jargon out of the way, “props” is short for “properties” so nothing particularly fancy there.
+
+Well, all right then. What makes props special?
+
+props are passed into the component
+Here’s an example (code from the React Guide):
+
+1
+2
+3
+4
+5
+6
+7
+class Welcome extends React.Component {
+  render() {
+    return <h1>Hello {this.props.name}</h1>;
+  }
+}
+
+const element = <Welcome name="Sara" />;
+You can play with this on CodePen.
+
+The line <Welcome name="Sara" /> creates a property name with value "Sara".
+
+That sounds kinda like a function call...
+
+Yep, the property is passed to the component, similar to how an argument is passed to a function. In fact, we could even rewrite the component to be simpler:
+
+1
+2
+3
+function Welcome(props) {
+  return <h1>Hello {props.name}</h1>;
+}
+Now the “props as arguments” comparison is even clearer.
+
+OK, so props “come from above.”
+
+Often, but not always. A component can also have default props, so if a prop isn’t passed through it can still be set.
+
+We can make the name property optional by adding defaultProps to the Welcome class:
+
+1
+2
+3
+4
+5
+6
+7
+8
+9
+class Welcome extends React.Component {
+  render() {
+    return <h1>Hello {this.props.name}</h1>;
+  }
+}
+
+Welcome.defaultProps = {
+  name: "world",
+};
+If Welcome is called without a name it will simply render <h1> Hello world</h1>.
+
+So props can come from the parent, or can be set by the component itself.
+
+props should not change
+What?! I’ve totally done that!
+
+You used to be able to change props with setProps and replaceProps but these have been deprecated. During a component’s life cycle props should not change (consider them immutable).
+
+Fine, I won’t change props any more.
+
+Since props are passed in, and they cannot change, you can think of any React component that only uses props (and not state) as “pure,” that is, it will always render the same output given the same input. This makes them really easy to test - win!
+
+State
+Like props, state holds information about the component. However, the kind of information and how it is handled is different.
+
+By default, a component has no state. The Welcome component from above is stateless:
+
+1
+2
+3
+function Welcome(props) {
+  return <h1>Hello {props.name}</h1>;
+}
+So when would you use state?
+
+When a component needs to keep track of information between renderings the component itself can create, update, and use state.
+
+We’ll be working with a fairly simple component to see state working in action. We’ve got a button that keeps track of how many times you’ve clicked it.
+
+Yawn...
+
+I know, but here’s the code:
+
+1
+2
+3
+4
+5
+6
+7
+8
+9
+10
+11
+12
+13
+14
+15
+16
+17
+18
+19
+20
+21
+22
+class Button extends React.Component {
+  constructor() {
+    super();
+    this.state = {
+      count: 0,
+    };
+  }
+
+  updateCount() {
+    this.setState((prevState, props) => {
+      return { count: prevState.count + 1 }
+    });
+  }
+
+  render() {
+    return (<button
+              onClick={() => this.updateCount()}
+            >
+              Clicked {this.state.count} times
+            </button>);
+  }
+}
+You can play with this code on CodePen.
+
+Gah! There’s so much there! What’s going on?
+
+So now we’re working with state things are a bit more complicated. But we’ll break it down to make it more understandable.
+
+Our first real difference between props and state is that...
+
+state is created in the component
+Let’s look at the constructor method:
+
+1
+2
+3
+4
+5
+6
+constructor() {
+  super();
+  this.state = {
+    count: 0,
+  };
+}
+This is where state gets it’s initial data. The inital data can be hard coded (as above), but it can also come from props.
+
+Well that’s just confusing.
+
+It is, I know. But it makes sense - you can’t change props, but it’s pretty reasonable to want to do stuff to the data that a component receives. That’s where state comes in.
+
+Moving on brings us to our second difference...
+
+state is changeable
+Here’s updateCount again:
+
+1
+2
+3
+4
+5
+updateCount() {
+  this.setState((prevState, props) => {
+    return { count: prevState.count + 1 }
+  });
+}
+We change the state to keep track of the total number of clicks. The important bit is setState. First off, notice that setState takes a function, that’s becuase setState can run asynchronously. It needs to take a callback function rather than updating the state directly. You can see we have access to prevState within the callback, this will contain the previous state, even if the state has already been updated somewhere else. Pretty slick, huh?
+
+But React goes one step better, setState updates the state object and re-renders the component automagically.
+
+Boom!
+
+Yeah, this is pretty great of React to do, no need for us to explicitly re-render or worry about anything. React will take care of it all!
+
+setState warning one!
+
+It is tempting to write this.state.count = this.state.count + 1. Do not do this! React cannot listen to the state getting updated in this way, so your component will not re-render. Always use setState.
+
+setState warning two!
+
+It might also be tempting to write something like this:
+
+1
+2
+3
+4
+// DO NOT USE
+this.setState({
+  count: this.state.count + 1
+});
+Although this might look reasonable, doesn’t throw errors, and you might find examples that use this syntax online, it is wrong. This does not take into account the asychronous nature that setState can use and might cause errors with out of sync state data.
+
+Program as usual
+
+And finally, render
+
+1
+2
+3
+4
+5
+6
+7
+render() {
+  return (<button
+            onClick={() => this.updateCount()}
+          >
+            Clicked {this.state.count} times
+          </button>);
+}
+onClick={() => this.updateCount()} means that when the button is clicked the updateCount method will be called. We need to use ES6’s arrow function so updateCount will have access to this instance’s state.
+
+The text rendered in the button is Clicked {this.state.count} times, which will use whatever this.state.count is at the time of rendering.
+
+Phew! That was a lot! Can I have it one more time?
+
+Sure thing, let’s look at the whole flow:
+
+The component is initialised and state.count is set to 0
+
+1
+2
+3
+  this.state = {
+    count: 0,
+  };
+The component renders, with “Clicked 0 times” as the button text
+
+1
+  Clicked {this.state.count} times
+The user clicks the button
+
+click!
+
+updateCount is called, bound to this instance of the component
+
+1
+onClick={() => this.updateCount()}
+updateCount calls setState with a call back to increase the counter from the previous state’s counter value
+
+1
+2
+3
+this.setState((prevState, props) => {
+  return { count: prevState.count + 1 }
+});
+setState triggers a call to render
+
+React magic!
+
+The component renders, with “Clicked 1 times” as the button text
+
+1
+Clicked {this.state.count} times
+Review
+While props and state both hold information relating to the component, they are used differently and should be kept separate.
+
+props contains information set by the parent component (although defaults can be set) and should not be changed.
+
+state contains “private” information for the component to initialise, change, and use on it’s own.
+
+... props are a way of passing data from parent to child. ... State is reserved only for interactivity, that is, data that changes over time.
+
+– Faceb
