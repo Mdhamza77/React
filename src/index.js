@@ -6,21 +6,7 @@ import './index.css';
 import reportWebVitals from './reportWebVitals';
 const root = ReactDOM.createRoot(document.getElementById('root'))
 
-
-function X(props) {
-    return  <p>{props.value}</p>
-}
-function Rern(props) {
-    const y = props.y
-    return(
-        <h3>
-        {y.map((z)=> <X key={z.toString()} value ={z} />)
-}</h3> )
-
-}
-
-const q = [22,44,33,444]
-root.render(<Rern y={q}/>)
+root.render(<App/>)
 
 
 

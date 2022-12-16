@@ -2,6 +2,7 @@ import React from 'react';
 import './App.css';
 import Props from './Props';
 import Class from './Class';
+import Forms from './Forms';
 function App() {
   
   return (
@@ -15,6 +16,7 @@ function App() {
          />
          
           <Class/>
+          <Forms/>
           
           
   </div>
