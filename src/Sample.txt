@@ -271,13 +271,13 @@ class prevent extends React.Component {
     }))
    }
    render()  {
-    return  {
+    return  (
       <div> 
           <Warn warn= {this.state.show} /> 
           <button onClick = {this.Toggle}>{this.state.show ? 'Hide' : 'Show'}
           </button>    
       
       </div>
-    }
+    )
    }
 }
