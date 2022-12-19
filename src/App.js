@@ -4,6 +4,8 @@ import Props from './Props';
 import Class from './Class';
 import Stateup from './Stateup';
 import Forms from './Forms';
+import Composition from './Composition';
+import Lifecycle from './lifecycle';
 function App() {
   
   return (
@@ -19,6 +21,8 @@ function App() {
          <Class/>
          <Stateup/>
          <Forms/>
+         <Composition/>
+         <Lifecycle/>
           
           
   </div>

@@ -7,26 +7,26 @@ import reportWebVitals from './reportWebVitals';
 const root = ReactDOM.createRoot(document.getElementById('root'))
 
 root.render(<App/>)
-class Examp extends React.Component {
-    constructor(props){
-        super(props);
-        this.state = {
-            value : ""
-        }
+// class Examp extends React.Component {
+//     constructor(props){
+//         super(props);
+//         this.state = {
+//             value : ""
+//         }
         
-    }
-    handle(){
-        console.log("Click handle")
-    }
-    render(){
-        return(
-            <button onClick={()=>{this.handle()}}></button>
-        )
-    }
-}
-export default Examp; 
+//     }
+//     handle(){
+//         console.log("Click handle")
+//     }
+//     render(){
+//         return(
+//             <button onClick={()=>{this.handle()}}></button>
+//         )
+//     }
+// }
+// export default Examp; 
 
-root.render(<Examp/>)
+// root.render(<Examp/>)
 
 
 
