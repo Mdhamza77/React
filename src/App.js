@@ -2,6 +2,7 @@ import React from 'react';
 import './App.css';
 import Props from './Props';
 import Class from './Class';
+import Stateup from './Stateup';
 import Forms from './Forms';
 function App() {
   
@@ -15,8 +16,9 @@ function App() {
          age = "22"
          />
          
-          <Class/>
-          <Forms/>
+         <Class/>
+         <Stateup/>
+         <Forms/>
           
           
   </div>
