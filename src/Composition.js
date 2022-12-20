@@ -2,14 +2,13 @@ import React from 'react';
 
 function FancyBorder(props) {
   return (
-    <div>
+    <div className={'FancyBorder' + props.color}>
       {props.children}
-      <h1>Child</h1>
     </div>
   );
 }
 
-const Composition = () => {
+function Composition() {
     return (
         <FancyBorder color="blue">
         <h1 className="Dialog-title">
@@ -18,6 +17,7 @@ const Composition = () => {
         <p className="Dialog-message">
           Thank you for visiting our spacecraft!
         </p>
+        
       </FancyBorder>
             
     );

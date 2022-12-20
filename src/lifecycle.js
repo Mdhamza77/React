@@ -8,12 +8,14 @@ class Lifecycle extends Component {
         }
     }
         componentDidMount(){
-            setInterval(
+           this.x=  setInterval(
                 ()=>{
                   this.setState ({favourite : "Apple"})
-                },100
-            )
-        
+                },1000
+           )
+    }
+    componentWillUnmount(){
+        clearInterval(this.x)
     }
     render() {
         return (

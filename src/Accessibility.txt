@@ -1,0 +1,36 @@
+Web Accessibility is used to design anc create a website which ca be accessible
+by everyone.
+
+Accessibility support is necessary for websites to interpret web pages.
+
+React support full accessible.
+
+wcag - by w3c follow this instruction nd rule to create an accessible web site.
+
+wai-Aria - Technique for fuly accessible java script Widgets.
+
+Dom properties and attributes in react is called camel cased and hypen is used called kebab case.
+
+Example :   
+
+<input   
+    type = "text" 
+    aria-label = {labelText}
+    onChange = {handlechange}
+    />
+
+
+Semantic HTML  :  
+
+Elements which doesn't break the flow of Html Semantic structure tag
+
+<div> , <ol> ,<li> .  
+
+Fragrments is used to return multiple Elements . it lets ypu group a list of children 
+without adding extra nodes to dom.
+
+<React.Fragrment>    
+<child/>
+</React.Fragrment>
+
+

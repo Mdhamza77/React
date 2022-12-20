@@ -7,6 +7,7 @@ import Forms from './Forms';
 import Composition from './Composition';
 import Lifecycle from './lifecycle';
 import ParentChild from './ParentChild';
+import Keyboard from './Keyboard';
 function App() {
   
   return (
@@ -25,6 +26,8 @@ function App() {
          <Composition/>
          <Lifecycle/>
          <ParentChild/>
+         <Keyboard/>
+
           
           
   </div>
