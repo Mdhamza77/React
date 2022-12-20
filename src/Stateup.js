@@ -5,7 +5,22 @@ function Temp(props) {
     }
     return <p>The Water will not boil</p>
 }
-
+class Celsius extends React.Component{
+    constructor(props){
+        super(props);
+        this.handle = this.handle.bind(this)
+    }
+    handle(e){
+        this.props.handle(
+            e.target.value
+        )
+    }
+    render(){
+        return (
+            <input type="number" value={this.props.handle} onChange={this.handle} />
+        )
+    }
+}
 class Stateup extends Component {
     constructor(props) {
         super(props);
@@ -21,7 +36,8 @@ class Stateup extends Component {
         const temp = this.state.temperature
         return (
             <fieldset>
-                <legend>Enter temperature in celsius</legend>                 <input type="number" value={temp} onChange={this.handle} />
+                <legend>Enter temperature in celsius</legend>   
+                 <Celsius type="number" value={temp} onChange={this.handle} />
                 <Temp celsius={parseFloat(temp)} />
             </fieldset>
         );

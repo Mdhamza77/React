@@ -12,7 +12,7 @@ function FancyBorder(props) {
 const Composition = () => {
     return (
         <FancyBorder color="blue">
-        <h1 className="Dialog-title"    >
+        <h1 className="Dialog-title">
           Welcome
         </h1>
         <p className="Dialog-message">
@@ -24,3 +24,26 @@ const Composition = () => {
 }
 
 export default Composition;
+
+
+
+
+function con(){
+  return <div className='contacts'>This is dummy Component</div>
+}
+function span(props){
+     return(
+      <con className='contacts'>
+        {props.left}
+        <h1>Welcome to page Composition</h1>
+      </con>
+     )
+}
+
+function co(){
+ return(
+    <span left="Welcome">
+      
+    </span>
+ )
+}

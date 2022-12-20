@@ -31,7 +31,7 @@ function getGreeting(user) {
   }
 
   const fun = ReactDOM.createRoot(document.getElementById('r'))
-  fun.render(<h3>This is to call function formatName {element}</h3>)
+  fun.render(<h3>This is to call function formatName{element}</h3>)
 
  
   <div id="r"></div>
