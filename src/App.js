@@ -6,6 +6,7 @@ import Stateup from './Stateup';
 import Forms from './Forms';
 import Composition from './Composition';
 import Lifecycle from './lifecycle';
+import ParentChild from './ParentChild';
 function App() {
   
   return (
@@ -23,6 +24,7 @@ function App() {
          <Forms/>
          <Composition/>
          <Lifecycle/>
+         <ParentChild/>
           
           
   </div>
