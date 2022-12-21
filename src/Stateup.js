@@ -21,7 +21,8 @@ class Stateup extends Component {
         const temp = this.state.temperature
         return (
             <fieldset>
-                <legend>Enter temperature in celsius</legend>                 <input type="number" value={temp} onChange={this.handle} />
+                <legend>Enter temperature in celsius</legend> 
+                <input type="number" value={temp} onChange={this.handle} />
                 <Temp celsius={parseFloat(temp)} />
             </fieldset>
         );
