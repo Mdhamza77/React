@@ -8,6 +8,7 @@ import Composition from './Composition';
 import Lifecycle from './lifecycle';
 import ParentChild from './ParentChild';
 import Keyboard from './Keyboard';
+import Split from './Split';
 function App() {
   
   return (
@@ -27,6 +28,7 @@ function App() {
          <Lifecycle/>
          <ParentChild/>
          <Keyboard/>
+         <Split/>
 
           
           
