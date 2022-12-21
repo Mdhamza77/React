@@ -9,7 +9,6 @@ import Lifecycle from './lifecycle';
 import ParentChild from './ParentChild';
 import Keyboard from './Keyboard';
 import Split from './Split';
-import Onclick from './Onclick';
 function App() {
   
   return (
@@ -29,8 +28,10 @@ function App() {
          <Lifecycle/>
          <ParentChild/>
          <Keyboard/>
-         <Onclick/>
          <Split/>
+         
+         
+         
 
           
           
