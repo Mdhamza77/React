@@ -70,7 +70,7 @@ function Mailbox(props) {
   const root = ReactDOM.createRoot(document.getElementById('root')); 
   root.render(<Mailbox unreadMessages={messages} />);
 
-  <></>
+  
 
 
   

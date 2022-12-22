@@ -10,6 +10,8 @@ import ParentChild from './ParentChild';
 import Keyboard from './Keyboard';
 import Split from './Split';
 import DynamicContext from './Dynamic-context';
+import FancyButton from './FancyButton';
+//import LogProps from './LogProps';
 function App() {
   
   return (
@@ -31,6 +33,8 @@ function App() {
          <Keyboard/>
          <Split/>
          <DynamicContext/>
+         <FancyButton/>
+         
          
          
          
