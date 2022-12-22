@@ -9,6 +9,7 @@ import Lifecycle from './lifecycle';
 import ParentChild from './ParentChild';
 import Keyboard from './Keyboard';
 import Split from './Split';
+import DynamicContext from './Dynamic-context';
 function App() {
   
   return (
@@ -29,6 +30,7 @@ function App() {
          <ParentChild/>
          <Keyboard/>
          <Split/>
+         <DynamicContext/>
          
          
          
