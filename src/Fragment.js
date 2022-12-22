@@ -13,5 +13,5 @@ class Fragment extends Component {
         );
     }
 }
-
+<></>
 export default Fragment;
