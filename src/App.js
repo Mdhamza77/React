@@ -11,7 +11,7 @@ import Keyboard from './Keyboard';
 import Split from './Split';
 import DynamicContext from './Dynamic-context';
 import FancyButton from './FancyButton';
-//import LogProps from './LogProps';
+import Reff from './Reff';
 function App() {
   
   return (
@@ -34,6 +34,7 @@ function App() {
          <Split/>
          <DynamicContext/>
          <FancyButton/>
+         <Reff/>
          
          
          
