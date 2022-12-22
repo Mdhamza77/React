@@ -12,6 +12,7 @@ import Split from './Split';
 import DynamicContext from './Dynamic-context';
 import FancyButton from './FancyButton';
 import Reff from './Reff';
+import Fragment from './Fragment';
 function App() {
   
   return (
@@ -35,6 +36,8 @@ function App() {
          <DynamicContext/>
          <FancyButton/>
          <Reff/>
+         <Fragment/>
+         
          
          
          
