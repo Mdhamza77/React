@@ -1,4 +1,4 @@
-import React from 'react';
+import React, { Profiler } from 'react';
 import { Component } from 'react';
 import './App.css';
 import Props from './Props';
@@ -17,7 +17,7 @@ import Fragment from './Fragment';
 import Components from './Hoc'
 import SelectPlugin from './SelectPlugin';
 import Spread from './Spread';
-
+import Practice from './Practice';
 class App extends Component {
   render(){
      // Destructing the props
@@ -32,8 +32,9 @@ class App extends Component {
          name = "Muhammed" 
          age = "22"
          />
-         
-         <Class/>
+         <Profiler id='Class'>
+         <Class/>  
+         </Profiler>
          <Stateup/>
          <Forms/>
          <Composition/>
@@ -46,9 +47,8 @@ class App extends Component {
          <Reff/>
          <Fragment/>
          <SelectPlugin/>
-         <h1>{this.props.name}</h1>
-         <button onClick={handle} >Hoc  Component " {show} "</button>
          <Spread/>
+         <h2>{this.props.name}</h2>
          
              
   </div>
@@ -59,5 +59,5 @@ class App extends Component {
 }
 
 
-export default Components(App);  
+export default Practice(App);  
 
