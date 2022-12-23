@@ -3,13 +3,13 @@ import React from 'react';
 import $ from 'jquery'
 class Plugins extends React.Component {
     componentDidMount(){
-        
+
         this.$el = $(this.el);
         
     }
     componentWillUnmount(){
         
-        alert("Done unmounting")
+        console.log("Done unmounting")
     }
     render() {
         return (
@@ -24,3 +24,5 @@ class Plugins extends React.Component {
 }
 
 export default Plugins;
+
+

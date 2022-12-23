@@ -16,6 +16,8 @@ import Reff from './Reff';
 import Fragment from './Fragment';
 import Components from './Hoc'
 import SelectPlugin from './SelectPlugin';
+import Spread from './Spread';
+
 class App extends Component {
   render(){
      // Destructing the props
@@ -44,9 +46,9 @@ class App extends Component {
          <Reff/>
          <Fragment/>
          <SelectPlugin/>
-         
          <h1>{this.props.name}</h1>
          <button onClick={handle} >Hoc  Component " {show} "</button>
+         <Spread/>
          
              
   </div>
