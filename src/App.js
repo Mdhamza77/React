@@ -1,4 +1,5 @@
 import React from 'react';
+import { Component } from 'react';
 import './App.css';
 import Props from './Props';
 import Class from './Class';
@@ -13,9 +14,13 @@ import DynamicContext from './Dynamic-context';
 import FancyButton from './FancyButton';
 import Reff from './Reff';
 import Fragment from './Fragment';
-function App() {
-  
+import Components from './Hoc'
+class App extends Component {
+  render(){
+     // Destructing the props
+     const {show , handle} = this.props ;
   return (
+
     <div className="App">
         <div>
     <h1>Hello!</h1>
@@ -37,20 +42,17 @@ function App() {
          <FancyButton/>
          <Reff/>
          <Fragment/>
+         <h1>{this.props.name}</h1>
+         <button onClick={handle} >Hoc  Component " {show} "</button>
          
-         
-         
-         
-         
-
-          
-          
+             
   </div>
   
     </div>
   );
 }
+}
 
 
-export default App;  
+export default Components(App);  
 
