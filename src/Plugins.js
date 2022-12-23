@@ -1,16 +1,21 @@
-import React, { Component } from 'react';
+import React from 'react';
 
-class Plugins extends Component {
+import $ from 'jquery'
+class Plugins extends React.Component {
     componentDidMount(){
         this.$el = $(this.el);
-        this.$el.Plugins();
+        
     }
     componentWillUnmount(){
-        this.$el.Plugins('Destroy')
+        console.log("Exit the")
     }
     render() {
         return (
-            <div ref={el => this.el = el}/>
+            <div>
+                <select className='select' ref={el => this.el = el}>
+                    {this.props.children}
+                </select>
+            </div>
         );
     }
 }
