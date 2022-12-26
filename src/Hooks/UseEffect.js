@@ -14,5 +14,6 @@ const UseEffect = () => {
         </div>
     );
 }
-
 export default UseEffect;
+
+

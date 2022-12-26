@@ -19,6 +19,7 @@ import Spread from './Spread';
 import Practice from './Practice';
 import StateHook from './Hooks/StateHook';
 import UseEffect from './Hooks/UseEffect';
+import Exercise from './Hooks/Exercise';
 class App extends Component {
   render(){
      // Destructing the props
@@ -52,6 +53,9 @@ class App extends Component {
          <h2>{this.props.name}</h2>
          <StateHook/>
          <UseEffect/>
+         <Exercise/>
+         
+        
          
              
   </div>
