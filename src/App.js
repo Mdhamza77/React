@@ -14,16 +14,16 @@ import DynamicContext from './Dynamic-context';
 import FancyButton from './FancyButton';
 import Reff from './Reff';
 import Fragment from './Fragment';
-import Components from './Hoc'
 import SelectPlugin from './SelectPlugin';
 import Spread from './Spread';
 import Practice from './Practice';
+import StateHook from './Hooks/StateHook';
 class App extends Component {
   render(){
      // Destructing the props
-     const {show , handle} = this.props ;
+     //const {show , handle} = this.props ;
   return (
-
+    
     <div className="App">
         <div>
     <h1>Hello!</h1>
@@ -49,6 +49,7 @@ class App extends Component {
          <SelectPlugin/>
          <Spread/>
          <h2>{this.props.name}</h2>
+         <StateHook/>
          
              
   </div>
