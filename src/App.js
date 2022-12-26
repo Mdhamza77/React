@@ -18,6 +18,7 @@ import SelectPlugin from './SelectPlugin';
 import Spread from './Spread';
 import Practice from './Practice';
 import StateHook from './Hooks/StateHook';
+import UseEffect from './Hooks/UseEffect';
 class App extends Component {
   render(){
      // Destructing the props
@@ -50,6 +51,7 @@ class App extends Component {
          <Spread/>
          <h2>{this.props.name}</h2>
          <StateHook/>
+         <UseEffect/>
          
              
   </div>
