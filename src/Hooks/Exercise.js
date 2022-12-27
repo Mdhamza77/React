@@ -7,7 +7,7 @@ function  Exercise(){
            console.log("exiting loop")
        }
        console.log('count value is updating');
-    });
+    },[]);
     return (
         <>
         <h1>This is Counter Click Button {count} , {increment}</h1>

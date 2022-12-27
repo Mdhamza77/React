@@ -20,6 +20,8 @@ import Practice from './Practice';
 import StateHook from './Hooks/StateHook';
 import UseEffect from './Hooks/UseEffect';
 import Exercise from './Hooks/Exercise';
+import WebComponents from './WebComponents';
+import UncontrolledComp from './UncontrolledComp';
 class App extends Component {
   render(){
      // Destructing the props
@@ -54,6 +56,8 @@ class App extends Component {
          <StateHook/>
          <UseEffect/>
          <Exercise/>
+         <WebComponents/>
+         <UncontrolledComp/>
          
         
          
