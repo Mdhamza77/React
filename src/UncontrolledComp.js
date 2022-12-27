@@ -11,7 +11,7 @@ class UncontrolledComp extends Component {
         }
     render() {
         return (
-            <div>
+            <div> 
                 <form onSubmit={this.handleChange}>
                    <label>
                         Name

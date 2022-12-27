@@ -3,11 +3,11 @@ function  Exercise(){
     const [count,setCount] = useState(0);
     const [increment,setInc] = useState(0)
     useEffect(() => {
-       if(!increment >= 0){
-           console.log("exiting loop")
-       }
+    //    if(!increment >= 0){
+    //        console.log("exiting loop")
+    //    }
        console.log('count value is updating');
-    },[]);
+    },[increment]);
     return (
         <>
         <h1>This is Counter Click Button {count} , {increment}</h1>

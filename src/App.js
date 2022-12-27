@@ -23,6 +23,7 @@ import Exercise from './Hooks/Exercise';
 import WebComponents from './WebComponents';
 import UncontrolledComp from './UncontrolledComp';
 import FunctionalUpdate from './Hooks/FunctionalUpdate';
+import HookContext from './Hooks/HookContext';
 class App extends Component {
   render(){
      // Destructing the props
@@ -60,6 +61,7 @@ class App extends Component {
          <WebComponents/>
          <UncontrolledComp/>
          <FunctionalUpdate/>
+         <HookContext/>
          
         
          
