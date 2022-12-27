@@ -22,6 +22,7 @@ import UseEffect from './Hooks/UseEffect';
 import Exercise from './Hooks/Exercise';
 import WebComponents from './WebComponents';
 import UncontrolledComp from './UncontrolledComp';
+import FunctionalUpdate from './Hooks/FunctionalUpdate';
 class App extends Component {
   render(){
      // Destructing the props
@@ -58,6 +59,7 @@ class App extends Component {
          <Exercise/>
          <WebComponents/>
          <UncontrolledComp/>
+         <FunctionalUpdate/>
          
         
          
