@@ -26,6 +26,7 @@ import FunctionalUpdate from './Hooks/FunctionalUpdate';
 import HookContext from './Hooks/HookContext';
 import Task1 from './Hooks/Task1';
 import Mounting from './Mounting';
+import Task2 from './Hooks/Task2';
 class App extends Component {
   render(){
      // Destructing the props
@@ -64,8 +65,10 @@ class App extends Component {
          <UncontrolledComp/>
          <FunctionalUpdate/>
          <HookContext/>
+         <p>Lifecycle Methods vs Hooks</p>
          <Task1/><br/>
          <Mounting/>
+         <Task2/>
          
          
         
