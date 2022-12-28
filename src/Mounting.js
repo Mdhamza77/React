@@ -20,7 +20,7 @@ class Mounting extends Component {
         console.log("Updated")
     }
     render() {
-           console.log("Rendering")
+           console.log("Rendering in class")
         return (
             <div>
                 <p>This is current {this.state.num} num</p>
