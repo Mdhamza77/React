@@ -1,6 +1,7 @@
 body{
-   background-color: skyblue;
+   background-color:#61dafb;
    text-align: justify;
+   color: black;
 }
 .App {
   text-align: center;
@@ -26,7 +27,7 @@ body{
   align-items: center;
   justify-content: center;
   font-size: calc(10px + 2vmin);
-  color: white;
+  color: black;
 }
 
 .App-link {

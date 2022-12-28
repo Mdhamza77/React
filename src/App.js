@@ -24,7 +24,8 @@ import WebComponents from './WebComponents';
 import UncontrolledComp from './UncontrolledComp';
 import FunctionalUpdate from './Hooks/FunctionalUpdate';
 import HookContext from './Hooks/HookContext';
-import Test from './Testing/.test'
+import Task1 from './Hooks/Task1';
+import Mounting from './Mounting';
 class App extends Component {
   render(){
      // Destructing the props
@@ -63,6 +64,8 @@ class App extends Component {
          <UncontrolledComp/>
          <FunctionalUpdate/>
          <HookContext/>
+         <Task1/><br/>
+         <Mounting/>
          
          
         
