@@ -3,7 +3,7 @@ import PropTypes from 'prop-types'
 class TypeCheck extends Component {
     static defaultProps = {
         name : "Hamza Muhammed" ,
-        num  : true ,
+        num  : 2345678 ,
         array : [1,2,3,4,5,6]
     }
     render() {

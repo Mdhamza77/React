@@ -28,7 +28,8 @@ import Task1 from './Hooks/Task1';
 import Mounting from './Mounting';
 import Task2 from './Hooks/Task2';
 import TypeCheck from './TypeCheck';
-import Redux from './Redux/Redux'
+import Redux from './Redux/Redux';
+import Task3 from './Task3';
 class App extends Component {
   render(){
      // Destructing the props
@@ -73,6 +74,7 @@ class App extends Component {
          <Task2/>
          <TypeCheck/>
          <Redux/>
+         <Task3/>         
          
          
         
