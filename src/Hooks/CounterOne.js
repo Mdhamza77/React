@@ -1,12 +1,14 @@
 import React, {useReducer} from "react";
    
-const initialState = 0 ;
+const initialState = {
+    firstCount : 0
+} ;
 const reducer = (state,action) => {
-      switch (action) {
+      switch (action.type) {
         case 'Increment':
-               return state + 1 ;  // Accepts the current state and returns the new State in Reducer Function 
+               return  {firstCount : state.firstCount + action.value} ;  // Accepts the current state and returns the new State in Reducer Function 
         case 'Decrement' : 
-               return  state - 1;
+               return  {firstCount : state.firstCount - action.value};
         case  'Reset' : 
                 return initialState            
         default:
@@ -15,13 +17,13 @@ const reducer = (state,action) => {
 }
 
 function CounterOne() {
-   const  [count,currentState]  =  useReducer(reducer,initialState) 
+   const  [count,dispatch]  =  useReducer(reducer,initialState) 
     return (
          <div>  
-             <div>count {count}</div>
-             <button onClick={()=> currentState('Increment')}>Increment</button>
-             <button onClick={()=> currentState('Decrement')}>Decrement</button>
-             <button onClick={()=> currentState('Reset')}>Reset</button>
+             <div>count {count.firstCount}</div>
+             <button onClick={()=> dispatch({ type : 'Increment' , value : 5 })}>Increment 5</button>
+             <button onClick={()=> dispatch({ type : 'Decrement' , value : 5})}>Decrement 5</button>
+             <button onClick={()=> dispatch({ type : 'Reset'})}>Reset</button>
          </div>
     )
 }
