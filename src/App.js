@@ -30,6 +30,7 @@ import Task2 from './Hooks/Task2';
 import TypeCheck from './TypeCheck';
 import Redux from './Redux/Redux';
 import Task3 from './Task3';
+import CounterOne from './Hooks/CounterOne';
 class App extends Component {
   render(){
      // Destructing the props
@@ -74,7 +75,8 @@ class App extends Component {
          <Task2/>
          <TypeCheck/>
          <Redux/>
-         <Task3/>         
+         <Task3/>   
+         <CounterOne/>      
          
          
         
