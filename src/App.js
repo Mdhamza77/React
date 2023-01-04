@@ -33,6 +33,7 @@ import Task3 from './Task3';
 import CounterOne from './Hooks/CounterOne';
 import UseRef from './Hooks/UseRef';
 import UseMemo from './Hooks/UseMemo';
+import Parent from './Parent';
 class App extends Component {
   render(){
      // Destructing the props
@@ -81,6 +82,7 @@ class App extends Component {
          <CounterOne/>  
          <UseRef/> 
          <UseMemo/>   
+         <Parent/>
          
          
         

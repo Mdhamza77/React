@@ -23,7 +23,7 @@ const Callback = () => {
 
      return (
         <div>
-            <div>             Count : {count}
+            <div>Count : {count}
              <button onClick={Increment}>Increase Counter</button>
              <button onClick={Decrement}>Decrement Counter</button>
              number : {number} 

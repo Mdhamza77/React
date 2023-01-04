@@ -1,6 +1,6 @@
 import React from 'react';
 
-const Rendering = (props) => {
+const Hello = (props) => {
     if(props.name){
         return <h1>Hello {props.name}</h1>
     }
@@ -9,4 +9,4 @@ const Rendering = (props) => {
     }
 }
 
-export default Rendering;
+export default Hello;
